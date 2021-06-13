@@ -1,0 +1,37 @@
+<html>
+  <head></head>
+  <body>
+
+    <section>
+      <h1>Business day calculator</h1>
+    </section>
+
+    <section>
+      <blockquote>
+        Business day = weekday, for instance a week has 5 weekday as we don't count weekend days.
+      </blockquote>
+    </section>
+
+    <section>
+      <span>I want to calculate the number of business days from</span>
+      <input type="date" name="fromDate" id="fromDate">
+      <span>to</span>
+      <input type="date" name="toDate" id="toDate">
+      <button id='btnDayDiff' type="button">Calculate</button>
+      <span id="diffResult"></span>
+    </section>
+
+    <section>
+      <span>I want to get the date whereas it's</span>
+      <input type="number" min="0" max="1000" id="diffDays"/>
+      <span>business day to</span>
+      <input type="date" name="untilDate" id="untilDate">
+      <button id='btnGetDate' type="button">Calculate</button>
+      <span id="dateResult"></span>
+    </section>
+
+    <script src="moment.js"></script>
+    <script src="moment-business.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
