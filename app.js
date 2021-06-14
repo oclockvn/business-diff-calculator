@@ -8,7 +8,7 @@ const fromDate2 = document.getElementById('fromDate2');
 
 const diffResult = document.getElementById('diffResult');
 const targetDateEle = document.getElementById('targetDate');
-const sqlEle = document.getElementById('sql');
+const sqlEle = document.getElementById('sqlResult');
 
 toDate.valueAsDate = new Date();
 fromDate2.valueAsDate = new Date();
@@ -27,9 +27,10 @@ btnDayDiff.addEventListener('click', () => {
 
   const dayDiff = to.diff(from, 'days');
   const bizDiff = to.businessDiff(from);
-  console.log(`day diff: ${dayDiff}, business diff: ${bizDiff}`);
+  const sqlDiff = -1 * dayDiff;
 
   diffResult.innerHTML = `Business day diff = ${bizDiff}, normal day diff = ${dayDiff}`;
+  sqlEle.innerHTML = `DATEADD(D, ${sqlDiff}, GETUTCNOW())`;
 });
 
 btnGetDate.addEventListener('click', () => {
