@@ -1,5 +1,13 @@
+<!DOCTYPE html>
 <html>
-  <head></head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Business Days Calculator</title>
+  </head>
   <body>
 
     <section>
@@ -8,26 +16,36 @@
 
     <section>
       <blockquote>
-        Business day = weekday, for instance a week has 5 weekday as we don't count weekend days.
+        Business day = weekday, for instance a week has 5 business days as we don't count weekend days.
+      </blockquote>
+    </section>
+
+    <section style="padding-top: 0;">
+      <blockquote>
+        Displaying format based on your system datetime format
       </blockquote>
     </section>
 
     <section>
-      <span>I want to calculate the number of business days from</span>
+      <span><span class="star">&starf;</span> I want to calculate the number of business days from</span>
       <input type="date" name="fromDate" id="fromDate">
       <span>to</span>
       <input type="date" name="toDate" id="toDate">
       <button id='btnDayDiff' type="button">Calculate</button>
-      <span id="diffResult"></span>
+      <div class="result" id="diffResult"></div>
+      <div class="helptext">*Use normal day diff in your sql script</div>
     </section>
 
     <section>
-      <span>I want to get the date whereas it's</span>
-      <input type="number" min="0" max="1000" id="diffDays"/>
-      <span>business day to</span>
-      <input type="date" name="untilDate" id="untilDate">
-      <button id='btnGetDate' type="button">Calculate</button>
-      <span id="dateResult"></span>
+      <span><span class="star">&starf;</span> From</span>
+      <input type="date" name="fromDate2" id="fromDate2">
+      <span>within</span>
+      <input type="number" min="-1000" max="1000" id="diffDays" value="1"/>
+      <span>business day , I want to </span>
+      <button id='btnGetDate' type="button">get the date</button>
+      <span></span>
+      <div class="result" id="targetDate"></div>
+      <div class="helptext">*You can also use negative number</div>
     </section>
 
     <script src="moment.js"></script>
